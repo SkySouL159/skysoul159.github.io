@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: white;
+  width: 80%; /* Default for larger screens */
+  margin: 0 auto;
+}
+
+@media (max-width: 639px) {
+  :root {
+    width: 98%; /* Override for mobile screens */
+    margin: 0 auto;
+  }
+}
+
+/* Apply Poppins font to the entire project */
+body {
+  font-family: "Poppins", sans-serif;
+}

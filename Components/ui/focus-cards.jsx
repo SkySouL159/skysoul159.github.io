@@ -8,8 +8,9 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => (
     onMouseEnter={() => setHovered(index)}
     onMouseLeave={() => setHovered(null)}
     className={cn(
-      "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out",
-      hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
+      "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out border-2 border-gray-200 dark:border-gray-800 shadow-lg", // Added shadow-lg
+      hovered !== null && hovered !== index && "blur-sm scale-[0.98]",
+      hovered === index && "shadow-xl" // Added enhanced shadow on hover
     )}
   >
     <Image

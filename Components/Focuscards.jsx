@@ -53,9 +53,9 @@ export function Focuscards() {
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-gray-100 py-5">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-gray-100 ">
       <div className="w-full max-w-[1400px] mx-auto">
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-800 text-center mb-4 lg:text-4xl">
           Our Work
         </h2>
         <FocusCards cards={cards} />

@@ -38,15 +38,13 @@ const Ourclients = () => {
     "/ClientLogos/vijay.png",
     "/ClientLogos/visda.png",
   ];
-  
-  //logos = logos.map((logo) => `/gravity/${logo}`);
 
   return (
-    <div className="container-width mx-auto px-4 py-8 md:py-12 lg:py-16">
-      <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 text-center mb-4 sm:mb-8">
+    <div className="container-width mx-auto px-4 mt-8 mb-4 md:py-12 lg:py-16 lg:mt-0">
+      <h2 className="text-2xl font-bold text-gray-800 text-center mb-4 lg:text-4xl">
         Our Valued Connections
       </h2>
-      <p className="text-sm sm:text-lg text-gray-500 mt-2 sm:mt-4 text-center">
+      <p className="text-sm sm:text-lg text-gray-500  sm:mt-4 text-center">
         We have worked with some of the best
         <br className="block sm:hidden" />
         companies in the industry to deliver our services.

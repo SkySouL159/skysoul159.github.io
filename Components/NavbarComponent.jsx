@@ -12,7 +12,7 @@ import {
 } from "@tabler/icons-react";
 import { NavMobile } from "@/Components/NavMobile";
 import Image from "next/image";
-import navicon from "@/public/gvt.png";
+import navicon from "@/public/gravitysmall.png";
 import { Link as NextLink } from "@nextui-org/react";
 import Link from "next/link";
 

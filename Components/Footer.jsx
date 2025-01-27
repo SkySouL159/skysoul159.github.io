@@ -11,7 +11,7 @@ import {
 export default function Footer() {
   return (
     <footer className="flex flex-col w-full bg1 mt-auto">
-      <div className="w-full h-8 wave bg2" />
+      <div className="w-full wave bg2" />
       <div className="bg2">
         <div className="container-width mx-auto px-4">
           <hr className="my-4 border-black" />

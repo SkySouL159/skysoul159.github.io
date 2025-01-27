@@ -31,7 +31,7 @@ export default function Founders() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="container mx-auto px-4 mt-10">
+    <div className="container mx-auto px-4 ">
       <div className="flex flex-col gap-4">
         {founders.map(({ name, src, hoverSrc, role }, index) => (
           <motion.div

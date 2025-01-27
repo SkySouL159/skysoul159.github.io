@@ -1,7 +1,12 @@
 import React from "react";
+import HoverCards from "../../Components/HoverCards";
+import ServiceHero from "../../Components/ServiceHero";
 
-const page = () => {
-  return <div>I am a service page</div>;
-};
-
-export default page;
+export default function Page() {
+  return (
+    <div>
+      <HoverCards />
+      <ServiceHero />
+    </div>
+  );
+}

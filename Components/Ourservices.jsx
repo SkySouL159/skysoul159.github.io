@@ -80,8 +80,8 @@ const shuffleArray = (array) => {
 // Main Component
 const OurServices = () => {
   return (
-    <div className="container-width mx-auto px-4 py-8">
-      <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
+    <div className="container-width mx-auto px-4 py-4">
+      <h2 className="text-2xl font-bold text-gray-800 text-center lg:text-4xl">
         Our Services
       </h2>
       <section className="w-full pt-3 pb-12 grid grid-cols-1 md:grid-cols-2 items-start gap-8">

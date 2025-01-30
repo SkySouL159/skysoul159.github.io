@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { SparklesCore } from "./ui/sparkles";
+import { SparklesCore } from "./ui/SparklesCore";
 import { motion } from "framer-motion";
 
 export function UIsparkle() {

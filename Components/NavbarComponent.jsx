@@ -15,11 +15,16 @@ import Image from "next/image";
 import navicon from "@/public/gravitysmall.png";
 import { Link as NextLink } from "@nextui-org/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Add this import
 
 export default function NavbarComponent() {
+  const pathname = usePathname(); // Get current route
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Check if current path matches
+  const isActive = (path) => pathname === path;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -35,6 +40,8 @@ export default function NavbarComponent() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Rest of your component remains the same until the navigation items:
 
   return (
     <div className="flex flex-col w-full">
@@ -69,7 +76,11 @@ export default function NavbarComponent() {
                 <NavbarItem>
                   <Link
                     href="/servicess"
-                    className="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-all duration-300"
+                    className={`flex items-center gap-1 px-4 py-2 rounded-full transition-all duration-300 ${
+                      isActive("/servicess")
+                        ? "bg-white shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                        : "hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    }`}
                   >
                     <CleanHandsOutlined />
                     Services
@@ -78,7 +89,11 @@ export default function NavbarComponent() {
                 <NavbarItem>
                   <Link
                     href="/portfolio"
-                    className="flex items-center gap-1 px-4 py-2 rounded-full hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-all duration-300"
+                    className={`flex items-center gap-1 px-4 py-2 rounded-full transition-all duration-300 ${
+                      isActive("/portfolio")
+                        ? "bg-white shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                        : "hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    }`}
                   >
                     <IconBriefcase2 stroke={2} size={24} />
                     Portfolio
@@ -87,7 +102,11 @@ export default function NavbarComponent() {
                 <NavbarItem>
                   <Link
                     href="/aboutus"
-                    className=" flex items-center gap-1 px-4 py-2 rounded-full hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-all duration-300"
+                    className={`flex items-center gap-1 px-4 py-2 rounded-full transition-all duration-300 ${
+                      isActive("/aboutus")
+                        ? "bg-white shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                        : "hover:bg-white hover:shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    }`}
                   >
                     <IconInfoCircle stroke={2} size={24} />
                     About Us

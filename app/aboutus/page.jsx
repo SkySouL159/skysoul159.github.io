@@ -8,7 +8,7 @@ import Map from "@/Components/Map";
 const page = () => {
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gray-800 text-center pt-4  lg:mt-8 ">
+      <h2 className="text-2xl font-bold text-gray-800 text-center pt-4   ">
         ABOUT US
       </h2>
       <div className="text-center">
@@ -77,11 +77,11 @@ const page = () => {
         </h2>
         <SocialCards />
       </section>
-      <section className="LOCATE US ">
-        <h2 className="text-2xl font-bold text-gray-800 text-center mt-4">
-          LOCATE US
-        </h2>
-        <div className=" flex-wrap lg:flex lg:items-center  lg:px-10">
+      <h2 className="text-2xl font-bold text-gray-800 text-center mt-4">
+        LOCATE US
+      </h2>
+      <section className="LOCATE US  flex-wrap lg:flex lg:items-center  lg:px-10">
+        <div className="left-side">
           <Link href="https://maps.app.goo.gl/ya5vhXJA29HZLBN69">
             <div className="flex flex-col text-sm sm:text-lg text-black px-4 mt-2 sm:mt-4 text-justify ">
               <span>Siyaram Skyline,</span>
@@ -94,9 +94,9 @@ const page = () => {
               </span>
             </div>
           </Link>
-          <div className="justify-center  mx-2 lg:w-auto lg:ml-4 mt-4 lg:mt-0 flex  lg:justify-start">
-            <Map />
-          </div>
+        </div>
+        <div className="right-side justify-center  mx-2 lg:w-auto lg:ml-80 mt-4 lg:mt-0 flex  lg:justify-start">
+          <Map />
         </div>
       </section>
     </div>

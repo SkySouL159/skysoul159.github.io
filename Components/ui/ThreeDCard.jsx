@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Add this import
+import { motion, AnimatePresence } from "framer-motion";
 
-export function ThreeDCard({ imageSrc }) {
+export function ThreeDCard({ imageSrc, width, height }) {
   const cardRef = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -17,6 +17,20 @@ export function ThreeDCard({ imageSrc }) {
     setHovered(false);
   };
 
+  // Calculate modal size based on the black and white image dimensions
+  const maxModalWidth = 400; // Maximum width for the modal
+  const maxModalHeight = 500; // Maximum height for the modal
+
+  const aspectRatio = width / height;
+  let modalWidth = maxModalWidth;
+  let modalHeight = maxModalWidth / aspectRatio;
+
+  // Ensure the modal doesn't exceed max height
+  if (modalHeight > maxModalHeight) {
+    modalHeight = maxModalHeight;
+    modalWidth = maxModalHeight * aspectRatio;
+  }
+
   return (
     <motion.div
       ref={cardRef}
@@ -24,10 +38,15 @@ export function ThreeDCard({ imageSrc }) {
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.8, opacity: 0 }}
       transition={{ type: "spring", duration: 0.4 }}
-      className="relative w-auto sm:w-[40rem] h-auto rounded-xl p-2 border bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] transition-transform duration-500 ease-out transform-gpu"
+      className="relative rounded-xl p-2 border bg-gray-50 dark:bg-black dark:border-white/[0.2] border-black/[0.1] transition-transform duration-500 ease-out transform-gpu"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
+      style={{
+        perspective: "1000px",
+        transformStyle: "preserve-3d",
+        width: `${modalWidth}px`,
+        height: `${modalHeight}px`, // Dynamic height
+      }}
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -36,9 +55,9 @@ export function ThreeDCard({ imageSrc }) {
       >
         <Image
           src={imageSrc}
-          height="1200"
-          width="1200"
-          className="h-80 w-full object-cover rounded-xl transition-shadow duration-500 ease-out"
+          height={modalHeight}
+          width={modalWidth}
+          className="h-full w-full object-cover rounded-xl transition-shadow duration-500 ease-out"
           alt="thumbnail"
           onLoad={() => setImageLoaded(true)}
         />

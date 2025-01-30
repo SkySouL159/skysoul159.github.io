@@ -13,19 +13,19 @@ const datas = [
     title: "INDIVIDUALS",
     text: "We offer personalized services for individuals, including film making, photography, graphics design, and content writing. Elevate your personal projects with our professional expertise.",
     color: "white",
-    image: "/ServicePagePic/alpha.svg",
+    image: "/ServiceCard/alpha.svg",
   },
   {
     title: "SMALL BUSINESSES",
     text: "Boost your small business with our website development, digital marketing, and brand building services. Our creative solutions help you stand out and grow effectively.",
     color: "white",
-    image: "/ServicePagePic/beta.svg",
+    image: "/ServiceCard/beta.svg",
   },
   {
     title: "LARGE ENTERPRISES",
     text: "For large enterprises, we provide scalable services like advanced VFX, high-end cinematography, and comprehensive tech support to maintain your competitive edge.",
     color: "white",
-    image: "/ServicePagePic/gamma.svg",
+    image: "/ServiceCard/gamma.svg",
   },
 ];
 

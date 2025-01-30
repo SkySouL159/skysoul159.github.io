@@ -3,60 +3,80 @@ import { FocusCards } from "@/Components/ui/focus-cards";
 export function Focuscards() {
   const cards = [
     {
-      title: "ARV REALTY",
-      src: "/WorkCards/arv.png",
-    },
-    {
       title: "Coffee Cup India",
-      src: "/WorkCards/cci.png",
+      images: [
+        "/WorkCards/cci.png",
+        "/WorkCards/cci.png",
+        "/WorkCards/cci.png",
+      ],
     },
     {
-      title: "Foreign Routes",
-      src: "/WorkCards/fr.png",
+      title: "Icon Bags",
+      images: [
+        "/WorkCards/icon1.jpg",
+        "/WorkCards/icon2.jpg",
+        "/WorkCards/icon3.jpg",
+        "/WorkCards/icon4.jpg",
+      ],
     },
     {
       title: "HRMD",
-      src: "/WorkCards/hermod.jpg",
+      images: [
+        "/WorkCards/hermod1.png",
+        "/WorkCards/hermod2.png",
+        "/WorkCards/hermod3.png",
+        "/WorkCards/hermod4.png",
+      ],
     },
     {
       title: "Hindustan Unilever",
-      src: "/WorkCards/hul.jpg",
+      images: [
+        "/WorkCards/hul.jpg",
+        "/WorkCards/hul1.jpg",
+        "/WorkCards/hul2.jpg",
+      ],
     },
     {
       title: "HAZELCOP",
-      src: "/WorkCards/hzc.png",
+      images: [
+        "/WorkCards/hazel0.png",
+        "/WorkCards/hazel4.webp",
+        "/WorkCards/hazel2.webp",
+        "/WorkCards/hazel3.webp",
+        "/WorkCards/hazel1.webp",
+      ],
     },
     {
       title: "Indie Grow",
-      src: "/WorkCards/ig.png",
+      images: ["/WorkCards/ig.png", "/WorkCards/ig.png"],
     },
     {
       title: "MYFITNESS",
-      src: "/WorkCards/mf.png",
+      images: ["/WorkCards/mf.png", "/WorkCards/mf.png"],
     },
     {
       title: "National Institute of Fashion Technology",
-      src: "/WorkCards/nift.jpg",
+      images: ["/WorkCards/nift.jpg", "/WorkCards/nift.jpg"],
     },
     {
       title: "nuts & jars",
-      src: "/WorkCards/nutsnjar.jpg",
+      images: ["/WorkCards/nutsnjar.jpg", "/WorkCards/nutsnjar.jpg"],
     },
     {
       title: "S Creation Films",
-      src: "/WorkCards/sf.png",
+      images: ["/WorkCards/sf.png", "/WorkCards/sf.png"],
     },
     {
       title: "Tridrashya",
-      src: "/WorkCards/trid.png",
+      images: ["/WorkCards/trid.png", "/WorkCards/trid.png"],
     },
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-gray-100 ">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-white to-gray-100">
       <div className="w-full max-w-[1400px] mx-auto">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4 lg:text-4xl">
-          Our Work
+          Proudly Presented
         </h2>
         <FocusCards cards={cards} />
       </div>

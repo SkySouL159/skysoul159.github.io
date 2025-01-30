@@ -3,7 +3,7 @@ import React from "react";
 import { SparklesCore } from "./ui/sparkles";
 import { motion } from "framer-motion";
 
-export function Sparkles() {
+export function UIsparkle() {
   return (
     <div className="h-[16rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md sm:h-[20rem]">
       <div

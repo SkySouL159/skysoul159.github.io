@@ -1,4 +1,4 @@
-import { Sparkles } from "@/Components/Sparkles";
+import { UIsparkle } from "@/Components/UIsparkle";
 import { Focuscards } from "@/Components/Focuscards";
 import Ourclients from "@/Components/Ourclients";
 import Ourservices from "@/Components/Ourservices";
@@ -6,7 +6,7 @@ import Ourservices from "@/Components/Ourservices";
 export default function Home() {
   return (
     <>
-      <Sparkles />
+      <UIsparkle />
       <Ourclients />
       <Ourservices />
       <Focuscards />

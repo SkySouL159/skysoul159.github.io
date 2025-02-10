@@ -1,10 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/skysoul159.github.io",
+  basePath:
+    process.env.NODE_ENV === "production" ? "/skysoul159.github.io" : "",
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "/skysoul159.github.io" : "",
   images: {
     unoptimized: true,
-    domains: ["skysoul159.github.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "skysoul159.github.io",
+      },
+    ],
   },
 };
 

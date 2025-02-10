@@ -4,11 +4,7 @@ const nextConfig = {
   basePath: "/skysoul159.github.io",
   images: {
     unoptimized: true,
-    domains: [
-      "images.unsplash.com",
-      "assets.aceternity.com",
-      "skysoul159.github.io",
-    ],
+    domains: ["skysoul159.github.io"],
   },
 };
 

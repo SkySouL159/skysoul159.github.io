@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     domains: [
-      "images.unsplash.com", // already used for other images
+      "images.unsplash.com",
       "assets.aceternity.com",
       "skysoul159.github.io",
     ],

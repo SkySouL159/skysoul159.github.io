@@ -4,15 +4,39 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const getRandomAnimation = () => {
+  const animations = [
+    { initial: { x: 300 }, animate: { x: 0 }, exit: { x: -300 } },
+    { initial: { x: -300 }, animate: { x: 0 }, exit: { x: 300 } },
+    { initial: { y: 300 }, animate: { y: 0 }, exit: { y: -300 } },
+    { initial: { y: -300 }, animate: { y: 0 }, exit: { y: 300 } },
+  ];
+  return animations[Math.floor(Math.random() * animations.length)];
+};
+
+// Add this function to get different durations based on card index
+const getTransitionDuration = (index) => {
+  const durations = [0.3, 0.5, 0.7];
+  return durations[index % durations.length];
+};
+
 export const Card = React.memo(({ card, index, hovered, setHovered }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [animation, setAnimation] = useState(getRandomAnimation());
+  const transitionDuration = getTransitionDuration(index);
+
+  // Update animation when changing slides
+  const changeSlide = (newIndex) => {
+    setCurrentIndex(newIndex);
+    setAnimation(getRandomAnimation());
+  };
 
   // Auto-slide effect
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % card.images.length);
+        changeSlide((prev) => (prev + 1) % card.images.length);
       }, 3000);
       return () => clearInterval(interval);
     }
@@ -34,10 +58,13 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => {
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -300, opacity: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          initial={animation.initial}
+          animate={animation.animate}
+          exit={animation.exit}
+          transition={{
+            duration: transitionDuration,
+            ease: "easeInOut",
+          }}
           className="absolute inset-0"
         >
           <Image
@@ -66,8 +93,8 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => {
           <button
             className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
             onClick={() =>
-              setCurrentIndex((prev) =>
-                prev === 0 ? card.images.length - 1 : prev - 1
+              changeSlide(
+                currentIndex === 0 ? card.images.length - 1 : currentIndex - 1
               )
             }
           >
@@ -75,9 +102,7 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => {
           </button>
           <button
             className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
-            onClick={() =>
-              setCurrentIndex((prev) => (prev + 1) % card.images.length)
-            }
+            onClick={() => changeSlide((currentIndex + 1) % card.images.length)}
           >
             <ChevronRight size={20} />
           </button>

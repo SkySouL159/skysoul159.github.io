@@ -91,7 +91,7 @@ export default function Footer() {
             {/* Logo and Company Info - Right Side */}
             <div className="flex items-center sm:flex-col sm:items-end gap-2 mt-4 sm:mt-16">
               <Image
-                src="/navicon.png"
+                src="/skysoul159.github.io/navicon.png"
                 width={40}
                 height={40}
                 className="object-contain sm:w-[100px] sm:h-[100px]"

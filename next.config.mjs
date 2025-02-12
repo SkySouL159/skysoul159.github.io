@@ -14,7 +14,7 @@ const nextConfig = {
       },
     ],
   },
-  distDir: 'build',
+  distDir: "out",
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
 };

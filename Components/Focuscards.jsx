@@ -1,4 +1,3 @@
-"use client";
 import { FocusCards } from "@/Components/ui/focus-cards";
 
 export function Focuscards() {

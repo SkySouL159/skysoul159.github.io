@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   output: "export",
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "/skysoul159.github.io/" : "",
+  basePath:
+    process.env.NODE_ENV === "production" ? "/skysoul159.github.io" : "",
 
   images: {
     unoptimized: true,
@@ -8,14 +13,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "skysoul159.github.io",
-        loader: "akamai",
-        path: "/",
+        pathname: "/**",
       },
     ],
   },
-  distDir: "out",
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

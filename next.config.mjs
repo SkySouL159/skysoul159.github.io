@@ -8,6 +8,8 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "skysoul159.github.io",
+        loader: "akamai",
+        path: "/",
       },
     ],
   },

@@ -6,18 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const getRandomAnimation = () => {
   const animations = [
-    { initial: { x: 300 }, animate: { x: 0 }, exit: { x: -300 } },
-    { initial: { x: -300 }, animate: { x: 0 }, exit: { x: 300 } },
-    { initial: { y: 300 }, animate: { y: 0 }, exit: { y: -300 } },
-    { initial: { y: -300 }, animate: { y: 0 }, exit: { y: 300 } },
+    {
+      initial: { opacity: 0, scale: 1.1 },
+      animate: { opacity: 1, scale: 1 },
+      exit: { opacity: 0, scale: 0.95 },
+    },
   ];
-  return animations[Math.floor(Math.random() * animations.length)];
+  return animations[0]; // Using consistent animation for smoothness
 };
 
-// Add this function to get different durations based on card index
-const getTransitionDuration = (index) => {
-  const durations = [0.3, 0.5, 0.7];
-  return durations[index % durations.length];
+const getTransitionDuration = () => {
+  return 0.7; // Consistent duration for smoother feel
 };
 
 export const Card = React.memo(({ card, index, hovered, setHovered }) => {
@@ -55,7 +54,7 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => {
       className="rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out border-2 border-gray-200 dark:border-gray-800 shadow-lg"
     >
       {/* Image Carousel */}
-      <AnimatePresence initial={false}>
+      <AnimatePresence mode="crossfade">
         <motion.div
           key={currentIndex}
           initial={animation.initial}
@@ -63,7 +62,9 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => {
           exit={animation.exit}
           transition={{
             duration: transitionDuration,
-            ease: "easeInOut",
+            ease: [0.25, 0.1, 0.25, 1.0], // Smoother easing curve
+            opacity: { duration: transitionDuration * 0.8 },
+            scale: { duration: transitionDuration },
           }}
           className="absolute inset-0"
         >
@@ -72,6 +73,8 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => {
             alt={card.title}
             fill
             className="object-cover"
+            priority={index === 0}
+            loading="eager"
           />
         </motion.div>
       </AnimatePresence>

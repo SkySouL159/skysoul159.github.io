@@ -1,12 +1,14 @@
-const isProd = process.env.NODE_ENV === "production";
+/** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  output: "export", // Required for static export
-  basePath: isProd ? "/skysoul159.github.io" : "", // Set the repo name
-  assetPrefix: isProd ? "/skysoul159.github.io/" : "",
+  output: "export",
   images: {
-    unoptimized: true, // Required for GitHub Pages
+    unoptimized: true,
   },
+  basePath:
+    process.env.NODE_ENV === "production" ? "/skysoul159.github.io" : "",
+  trailingSlash: true,
+  reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;

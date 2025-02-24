@@ -1,40 +1,24 @@
 {
-  "name": "gravity",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://skysoul159.github.io/",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
+    "dev": "next dev --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "deploy": "npm run build && npm run export && gh-pages -d out"
+    "deploy": "npm run build && npm run export && gh-pages -d dist"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^6.4.0",
-    "@mui/material": "^6.4.1",
-    "@nextui-org/react": "^2.6.11",
-    "@tabler/icons-react": "^3.28.1",
-    "@tsparticles/engine": "^3.7.1",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.7.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cobe": "^0.6.3",
-    "framer-motion": "^11.17.0",
-    "lucide-react": "^0.474.0",
-    "next": "15.1.0",
+    "next": "15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.1.0",
+    "eslint-config-next": "15.1.7",
     "gh-pages": "^6.3.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"

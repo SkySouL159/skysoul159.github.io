@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
   output: "export",
+  distDir: "dist",
   images: {
-    unoptimized: true,
+    unoptimized: true, // Required for GitHub Pages
   },
-  basePath:
-    process.env.NODE_ENV === "production" ? "/skysoul159.github.io" : "",
-  trailingSlash: true,
-  reactStrictMode: true,
+  assetPrefix: "/", // Serving from root domain
 };
 
 export default nextConfig;

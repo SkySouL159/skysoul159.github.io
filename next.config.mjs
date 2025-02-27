@@ -3,9 +3,9 @@ const nextConfig = {
   output: "export",
   distDir: "dist",
   images: {
-    unoptimized: true, // Required for GitHub Pages
+    unoptimized: true,
   },
-  assetPrefix: "/", // Serving from root domain
+  assetPrefix: "",
 };
 
 export default nextConfig;
